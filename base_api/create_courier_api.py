@@ -20,16 +20,8 @@ class CreateCourierApi(BaseApi):
         }
 
         # отправляем запрос на регистрацию курьера и сохраняем ответ в переменную response
-        response = requests.post(url=constans.COURIER_API, data=payload)
-
-        # если регистрация прошла успешно (код ответа 201), добавляем в список логин и пароль курьера
-        if response.status_code == 201:
-            login_pass.append(login)
-            login_pass.append(password)
-            login_pass.append(first_name)
-
-        # возвращаем список
-        return login_pass
+        response = requests.post('https://qa-scooter.praktikum-services.ru/api/v1/courier', data=payload)
+        return response
 
     @allure.title('сгенерировать строку')
     def generate_random_string(self, length):
@@ -79,4 +71,4 @@ class CreateCourierApi(BaseApi):
 
         # отправляем запрос на регистрацию курьера и сохраняем ответ в переменную response
         response = requests.post('https://qa-scooter.praktikum-services.ru/api/v1/courier', data=payload)
-        return response.status_code
+        return response

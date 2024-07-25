@@ -11,7 +11,7 @@ class CreateOrderApi(BaseApi):
     URL_TEST = constants.ORDER_API
 
     @allure.title('Создать заказ и вернуть статус код')
-    def create_order_and_return_status_code(self, color: str):
+    def create_order_and_return_response(self, color: str):
         data = {
             "firstName": 'Naruto',
             "lastName": 'Uchiha',
@@ -25,7 +25,7 @@ class CreateOrderApi(BaseApi):
         }
 
         response = requests.post(url=self.URL_TEST, json=data)
-        return response.status_code
+        return response
     @allure.title('Создать заказ и вернуть тело запроса')
     def create_order_and_return_body(self, color: str):
         data = {
@@ -46,4 +46,4 @@ class CreateOrderApi(BaseApi):
     @allure.title('Получить список заказов')
     def get_list_order(self):
         response = requests.get(url=self.URL_TEST)
-        return response.json()
+        return response
