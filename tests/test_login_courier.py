@@ -5,7 +5,7 @@ from constans import Constants
 constants = Constants()
 
 
-class TestLoginCourier(BaseApi):
+class TestLoginCourier:
 
     def test_login_courier(self):
         login = constants.LOGIN

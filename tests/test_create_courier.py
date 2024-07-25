@@ -2,7 +2,7 @@ from base_api.test_base_api import BaseApi
 from base_api.create_courier_api import CreateCourierApi
 
 
-class TestCreateCourier(BaseApi):
+class TestCreateCourier:
 
     def test_create_courier(self):
         base_api = BaseApi()

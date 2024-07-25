@@ -3,7 +3,7 @@ from base_api.test_base_api import BaseApi
 from base_api.api_order import CreateOrderApi
 
 
-class TestCreateOrder(BaseApi):
+class TestCreateOrder:
 
     @pytest.mark.parametrize('color', [['BLACK'], ['GREY'], ['BLACK AND GREY'], ['']])
     def test_create_order(self, color):
