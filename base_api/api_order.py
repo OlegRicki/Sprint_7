@@ -26,22 +26,6 @@ class CreateOrderApi(BaseApi):
 
         response = requests.post(url=self.URL_TEST, json=data)
         return response
-    @allure.title('Создать заказ и вернуть тело запроса')
-    def create_order_and_return_body(self, color: str):
-        data = {
-            "firstName": 'Naruto',
-            "lastName": 'Uchiha',
-            "address": "Konoha, 142 apt.",
-            "metroStation": 4,
-            "phone": '+7 800 355 35 35',
-            "rentTime": 5,
-            "deliveryDate": "2020-06-06",
-            "comment": "Saske, come back to Konoha",
-            "color": [color]
-        }
-
-        response = requests.post(url=self.URL_TEST, json=data)
-        return response.json()
 
     @allure.title('Получить список заказов')
     def get_list_order(self):
